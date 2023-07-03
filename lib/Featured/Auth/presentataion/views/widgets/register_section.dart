@@ -56,6 +56,9 @@ class _RegisterSectionState extends State<RegisterSection> {
                 if (p0?.isEmpty ?? true) {
                   return "Email Can't be empty";
                 }
+                if (!p0!.contains('@')) {
+                  return "Error in email formatt";
+                }
                 return null;
               },
             ),

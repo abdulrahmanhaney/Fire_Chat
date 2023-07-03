@@ -33,6 +33,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             showSnakBar(context, text: state.erroeMessage);
           } else if (state is LoginUserSuccess) {
             debugPrint(state.user.toString());
+            setState(() {
+              inAsyncCall = false;
+            });
           }
         },
         child: ModalProgressHUD(

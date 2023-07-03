@@ -38,6 +38,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
             setState(() {
               isAsyncCall = false;
             });
+            Navigator.pushReplacementNamed(context, LoginView.id);
           }
         },
         child: ModalProgressHUD(
