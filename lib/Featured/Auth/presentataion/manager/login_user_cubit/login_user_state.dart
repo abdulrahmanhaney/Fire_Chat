@@ -8,3 +8,15 @@ abstract class LoginUserState extends Equatable {
 }
 
 class LoginUserInitial extends LoginUserState {}
+
+class LoginUserLoading extends LoginUserState {}
+
+class LoginUserSuccess extends LoginUserState {
+  final UserCredential user;
+  const LoginUserSuccess(this.user);
+}
+
+class LoginUserFailuer extends LoginUserState {
+  final String erroeMessage;
+  const LoginUserFailuer(this.erroeMessage);
+}

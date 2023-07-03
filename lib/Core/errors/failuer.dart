@@ -24,7 +24,9 @@ class FirebaseFailuer extends Failuer {
 
       default:
         return FirebaseFailuer(
-            'Oops There is an Error, Please try again later');
+          firebaseAuthException.message ??
+              'Oops There is an error, Please try again later',
+        );
     }
   }
 }

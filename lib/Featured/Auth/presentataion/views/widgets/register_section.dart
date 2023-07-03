@@ -12,9 +12,9 @@ class RegisterSection extends StatefulWidget {
 }
 
 class _RegisterSectionState extends State<RegisterSection> {
-  String? username;
-  String? email;
-  String? password;
+  late String username;
+  late String email;
+  late String password;
   GlobalKey<FormState> key = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
@@ -37,7 +37,7 @@ class _RegisterSectionState extends State<RegisterSection> {
               icon: Icons.person,
               hint: 'Username',
               onSaved: (p0) {
-                username = p0;
+                username = p0!;
               },
               validator: (p0) {
                 if (p0?.isEmpty ?? true) {
@@ -50,7 +50,7 @@ class _RegisterSectionState extends State<RegisterSection> {
               icon: Icons.email,
               hint: 'Email',
               onSaved: (p0) {
-                email = p0;
+                email = p0!;
               },
               validator: (p0) {
                 if (p0?.isEmpty ?? true) {
@@ -63,7 +63,7 @@ class _RegisterSectionState extends State<RegisterSection> {
               icon: Icons.password,
               hint: 'Password',
               onSaved: (p0) {
-                password = p0;
+                password = p0!;
               },
               validator: (p0) {
                 if (p0?.isEmpty ?? true) {
@@ -77,7 +77,7 @@ class _RegisterSectionState extends State<RegisterSection> {
                 if (key.currentState!.validate()) {
                   key.currentState!.save();
                   BlocProvider.of<CreateUserCubit>(context).createUser(
-                      userName: username!, email: email!, passWord: password!);
+                      userName: username, email: email, passWord: password);
                 } else {
                   setState(() {
                     autovalidateMode = AutovalidateMode.always;

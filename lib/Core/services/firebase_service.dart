@@ -11,6 +11,7 @@ class FirebaseAuthService {
       required String passWord}) async {
     UserCredential user = await firebaseAuth.createUserWithEmailAndPassword(
         email: email, password: passWord);
+    await user.user!.updateDisplayName(name);
     return user;
   }
 

@@ -2,6 +2,7 @@ import 'package:fire_chat/Core/utils/app_themes.dart';
 import 'package:fire_chat/Core/utils/service_lactor.dart';
 import 'package:fire_chat/Featured/Auth/data/repositories/auth_repo_impl.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/manager/create_user_cubit/create_user_cubit.dart';
+import 'package:fire_chat/Featured/Auth/presentataion/manager/login_user_cubit/login_user_cubit.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/views/login_view.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/views/register_view.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/views/reset_password_view.dart';
@@ -31,6 +32,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => CreateUserCubit(authrepoimpl),
+        ),
+        BlocProvider(
+          create: (context) => LoginUserCubit(authrepoimpl),
         ),
       ],
       child: MaterialApp(
