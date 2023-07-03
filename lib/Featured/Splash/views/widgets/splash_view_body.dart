@@ -39,11 +39,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
           FadeTransition(
             opacity: fadeAnimation,
             child: CircleAvatar(
-              backgroundColor: Colors.black,
+              backgroundColor: Theme.of(context).primaryColor,
               radius: MediaQuery.of(context).size.height * 0.100,
-              child: const Icon(
+              child: Icon(
                 Icons.whatshot_sharp,
                 size: 100,
+                color: Theme.of(context).cardColor,
               ),
             ),
           ),
@@ -55,7 +56,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
             child: const Text(
               'Fire Chat',
               textAlign: TextAlign.center,
-              style: AppTextStyles.s30,
+              style: AppTextStyles.s30b,
             ),
           ),
         ],

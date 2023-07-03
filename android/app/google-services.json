@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "553661602646",
+    "project_id": "firebasetestsalah",
+    "storage_bucket": "firebasetestsalah.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553661602646:android:bb304ab380a0f24d0fd4f7",
+        "android_client_info": {
+          "package_name": "com.example.fire_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553661602646-903picda23q2pn4q7cac7hd1iqe3f1bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7tRrgWt4J5xoueM10XNFymBvfTi3SXTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553661602646-903picda23q2pn4q7cac7hd1iqe3f1bi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "553661602646-fc3jpsnh5h2b285rll47ggj6kbhq4enr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firebaseFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
