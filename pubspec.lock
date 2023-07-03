@@ -216,6 +216,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  get_it:
+    dependency: "direct main"
+    description:
+      name: get_it
+      sha256: "529de303c739fca98cd7ece5fca500d8ff89649f1bb4b4e94fb20954abcd7468"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "7.6.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -280,6 +288,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.9.1"
+  modal_progress_hud_nsn:
+    dependency: "direct main"
+    description:
+      name: modal_progress_hud_nsn
+      sha256: "0b0d95e5ce3e1884390624fbe79fcf90d7de10abe05d26c0e276c25e7130e3e0"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.4.0"
   nested:
     dependency: transitive
     description:

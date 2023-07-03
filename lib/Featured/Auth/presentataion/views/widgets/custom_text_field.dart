@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
   CustomTextField(
-      {super.key, required this.icon, required this.hint, this.onChanged});
+      {super.key,
+      required this.icon,
+      required this.hint,
+      this.onSaved,
+      this.validator,
+      this.onCahange});
 
   IconData icon, eyeIcon = Icons.remove_red_eye;
   String hint;
   bool isShow = false;
-  Function(String)? onChanged;
+  void Function(String?)? onSaved;
+  Function(String)? onCahange;
   String? Function(String?)? validator;
 
   @override
@@ -17,8 +23,9 @@ class CustomTextField extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
         validator: validator,
-        onChanged: onChanged,
+        onSaved: onSaved,
         obscureText: isShow,
+        onChanged: onCahange,
         style: const TextStyle(fontSize: 14),
         decoration: InputDecoration(
           contentPadding:

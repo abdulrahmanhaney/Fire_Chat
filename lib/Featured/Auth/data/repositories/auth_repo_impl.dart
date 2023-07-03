@@ -5,7 +5,8 @@ import 'package:fire_chat/Featured/Auth/data/repositories/auth_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepoImpl implements AuthRepo {
-  late final FirebaseAuthService firebaseAuthService;
+  final FirebaseAuthService firebaseAuthService;
+  AuthRepoImpl(this.firebaseAuthService);
 
   @override
   Future<Either<Failuer, UserCredential>> firebaseLogin(
