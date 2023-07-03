@@ -1,6 +1,9 @@
-import 'package:fire_chat/Core/styles/text_styles.dart';
+import 'package:fire_chat/Featured/Auth/views/login_view.dart';
 import 'package:fire_chat/Featured/Auth/views/widgets/register_section.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import 'action_row.dart';
 
 class RegisterViewBody extends StatelessWidget {
   const RegisterViewBody({super.key});
@@ -35,47 +38,13 @@ class RegisterViewBody extends StatelessWidget {
             ActionRow(
               text: 'Already Have An Account ?',
               actionText: 'Login Now',
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(LoginView.id);
+              },
             )
           ],
         ),
       ),
-    );
-  }
-}
-
-class ActionRow extends StatelessWidget {
-  const ActionRow({
-    super.key,
-    required this.text,
-    required this.actionText,
-    required this.onTap,
-  });
-
-  final String text;
-  final String actionText;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          text,
-          style: AppTextStyles.s14n,
-        ),
-        const SizedBox(
-          width: 5,
-        ),
-        GestureDetector(
-          onTap: onTap,
-          child: Text(
-            actionText,
-            style: AppTextStyles.s14b,
-          ),
-        ),
-      ],
     );
   }
 }
