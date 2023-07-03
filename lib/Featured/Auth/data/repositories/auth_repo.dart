@@ -14,5 +14,5 @@ abstract class AuthRepo {
     required String passWord,
   });
 
-  void resetPassword();
+  void resetPassword({required String email});
 }
