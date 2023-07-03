@@ -1,7 +1,6 @@
 import 'package:fire_chat/Core/styles/text_styles.dart';
-import 'package:fire_chat/Featured/Auth/views/register_view.dart';
+import 'package:fire_chat/Featured/Auth/presentataion/views/register_view.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -86,7 +85,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        GoRouter.of(context).push(RegisterView.id);
+        Navigator.of(context).pushReplacementNamed(RegisterView.id);
       },
     );
   }

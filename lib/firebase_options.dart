@@ -66,7 +66,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '553661602646',
     projectId: 'firebasetestsalah',
     storageBucket: 'firebasetestsalah.appspot.com',
-    iosClientId: '553661602646-tkmo7331f72ahcib96u5cr72m1qfe735.apps.googleusercontent.com',
+    iosClientId:
+        '553661602646-tkmo7331f72ahcib96u5cr72m1qfe735.apps.googleusercontent.com',
     iosBundleId: 'com.example.fireChat',
   );
 
@@ -76,7 +77,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '553661602646',
     projectId: 'firebasetestsalah',
     storageBucket: 'firebasetestsalah.appspot.com',
-    iosClientId: '553661602646-kj73kbpuks46sp74v0dm5sa3t7uph6p2.apps.googleusercontent.com',
+    iosClientId:
+        '553661602646-kj73kbpuks46sp74v0dm5sa3t7uph6p2.apps.googleusercontent.com',
     iosBundleId: 'com.example.fireChat.RunnerTests',
   );
 }

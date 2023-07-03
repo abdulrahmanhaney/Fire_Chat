@@ -1,5 +1,5 @@
 import 'package:fire_chat/Core/styles/text_styles.dart';
-import 'package:fire_chat/Featured/Auth/views/widgets/custom_text_field.dart';
+import 'package:fire_chat/Featured/Auth/presentataion/views/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class RegisterSection extends StatelessWidget {
@@ -33,7 +33,7 @@ class RegisterSection extends StatelessWidget {
           ElevatedButton(
             onPressed: () {},
             child: const Text('Register'),
-          )
+          ),
         ],
       ),
     );

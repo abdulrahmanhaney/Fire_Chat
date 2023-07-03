@@ -1,4 +1,4 @@
-import 'package:fire_chat/Featured/Auth/views/widgets/login_view_body.dart';
+import 'package:fire_chat/Featured/Auth/presentataion/views/widgets/login_view_body.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {

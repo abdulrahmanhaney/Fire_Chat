@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../Core/styles/text_styles.dart';
+import '../../../../../Core/styles/text_styles.dart';
 
 class ActionRow extends StatelessWidget {
   const ActionRow({
