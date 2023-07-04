@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fire_chat/Core/utils/app_themes.dart';
 import 'package:fire_chat/Core/utils/service_lactor.dart';
 import 'package:fire_chat/Featured/Auth/data/repositories/auth_repo_impl.dart';
@@ -12,6 +13,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,10 +32,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var authrepoimpl = getIt.get<AuthRepoImpl>();
+    var shared = getIt.get<SharedPreferences>();
+    var users = getIt.get<CollectionReference>(instanceName: 'users');
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => CreateUserCubit(authrepoimpl),
+          create: (context) => CreateUserCubit(authrepoimpl, users),
         ),
         BlocProvider(
           create: (context) => LoginUserCubit(authrepoimpl),

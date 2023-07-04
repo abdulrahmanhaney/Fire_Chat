@@ -1,6 +1,8 @@
 import 'package:fire_chat/Core/styles/text_styles.dart';
+import 'package:fire_chat/Core/utils/service_lactor.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/views/register_view.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -14,6 +16,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   late AnimationController animationController;
   late Animation<double> fadeAnimation;
   late Animation<Offset> slideAnimation;
+  var shared = getIt.get<SharedPreferences>();
 
   @override
   void initState() {
@@ -51,12 +54,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
             height: 10,
           ),
           SlideTransition(
-              position: slideAnimation,
-              child: const Text(
-                'Fire Chat',
-                textAlign: TextAlign.center,
-                style: AppTextStyles.s30b,
-              )),
+            position: slideAnimation,
+            child: const Text(
+              'Fire Chat',
+              textAlign: TextAlign.center,
+              style: AppTextStyles.s30b,
+            ),
+          ),
         ],
       ),
     );

@@ -1,4 +1,3 @@
-import 'package:fire_chat/Featured/Auth/data/models/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseAuthService {
@@ -13,10 +12,9 @@ class FirebaseAuthService {
     UserCredential user = await firebaseAuth.createUserWithEmailAndPassword(
         email: email, password: passWord);
     await user.user!.updateDisplayName(name);
+    user = await loginUser(email: email, passWord: passWord);
     return user;
   }
-
-  Future<void> addUserInfo({required UserModel user}) async {}
 
   Future<UserCredential> loginUser(
       {required String email, required String passWord}) async {

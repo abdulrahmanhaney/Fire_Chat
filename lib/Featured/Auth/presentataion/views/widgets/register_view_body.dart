@@ -1,4 +1,5 @@
 import 'package:fire_chat/Core/helpers/show_snak_bar.dart';
+import 'package:fire_chat/Featured/Auth/data/models/user_model.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/manager/create_user_cubit/create_user_cubit.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/views/login_view.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/views/widgets/register_section.dart';
@@ -34,11 +35,21 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               isAsyncCall = false;
             });
           } else if (state is CreateUserSuccess) {
-            debugPrint(state.user.toString());
+            showSnakBar(context, text: 'Create user success');
+            showSnakBar(context, text: 'Adding user info');
+            BlocProvider.of<CreateUserCubit>(context).storeUserInfo(
+              user: UserModel.fromCredintial(state.user),
+            );
+          } else if (state is AddInfoSucess) {
             setState(() {
               isAsyncCall = false;
             });
-            Navigator.pushReplacementNamed(context, LoginView.id);
+            Navigator.pushNamed(context, LoginView.id);
+          } else if (state is AddInfoFailuer) {
+            setState(() {
+              isAsyncCall = false;
+            });
+            showSnakBar(context, text: state.errorMessage);
           }
         },
         child: ModalProgressHUD(

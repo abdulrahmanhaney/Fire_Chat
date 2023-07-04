@@ -11,6 +11,13 @@ class CreateUserInitial extends CreateUserState {}
 
 class CreateUserLoading extends CreateUserState {}
 
+class AddInfoSucess extends CreateUserState {}
+
+class AddInfoFailuer extends CreateUserState {
+  final String errorMessage;
+  const AddInfoFailuer(this.errorMessage);
+}
+
 class CreateUserSuccess extends CreateUserState {
   final UserCredential user;
   const CreateUserSuccess(this.user);

@@ -7,17 +7,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 final getIt = GetIt.instance;
 
-void setupGetIt() {
+void setupGetIt() async {
   getIt.registerSingleton<FirebaseAuthService>(
       FirebaseAuthService(FirebaseAuth.instance));
   getIt.registerLazySingleton<CollectionReference>(
     () => FirebaseFirestore.instance.collection('users'),
     instanceName: 'users',
   );
-  getIt.registerLazySingleton<Future<SharedPreferences>>(
-    () => SharedPreferences.getInstance(),
-    instanceName: 'userInfo',
-  );
+  getIt.registerSingleton<SharedPreferences>(
+      await SharedPreferences.getInstance());
   getIt.registerSingleton<AuthRepoImpl>(
       AuthRepoImpl(getIt.get<FirebaseAuthService>()));
 }
