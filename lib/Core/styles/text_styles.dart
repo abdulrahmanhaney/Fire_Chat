@@ -8,19 +8,19 @@ class AppTextStyles {
   // s => Size
   static const TextStyle s30b = TextStyle(
     fontSize: 30,
-    fontWeight: FontWeight.w900,
+    fontWeight: FontWeight.bold,
   );
   static const TextStyle s20b = TextStyle(
     fontSize: 20,
-    fontWeight: FontWeight.w900,
+    fontWeight: FontWeight.bold,
   );
   static const TextStyle s16b = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w500,
   );
   static const TextStyle s14b = TextStyle(
     fontSize: 14,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w500,
   );
   static const TextStyle s14n = TextStyle(
     fontSize: 14,

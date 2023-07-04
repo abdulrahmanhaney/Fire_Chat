@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../Core/styles/text_styles.dart';
-
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({
     super.key,
@@ -22,15 +20,11 @@ class HomeViewBody extends StatelessWidget {
               ),
               Text(
                 'Fire Chat',
-                style: AppTextStyles.s20b,
               ),
             ],
           ),
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-            IconButton(
-                onPressed: () {}, icon: const Icon(Icons.camera_alt_rounded)),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.rowing)),
           ],
         ),
         SliverToBoxAdapter(

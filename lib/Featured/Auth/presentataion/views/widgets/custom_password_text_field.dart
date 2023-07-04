@@ -20,7 +20,7 @@ class CustomPassWordTextField extends StatefulWidget {
 }
 
 class _CustomPassWordTextFieldState extends State<CustomPassWordTextField> {
-  bool isShow = false;
+  bool isHide = true;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class _CustomPassWordTextFieldState extends State<CustomPassWordTextField> {
       child: TextFormField(
         validator: widget.validator,
         onSaved: widget.onSaved,
-        obscureText: isShow,
+        obscureText: isHide,
         onChanged: widget.onCahange,
         style: const TextStyle(fontSize: 14),
         decoration: InputDecoration(
@@ -40,11 +40,11 @@ class _CustomPassWordTextFieldState extends State<CustomPassWordTextField> {
           suffixIcon: IconButton(
             onPressed: () {
               setState(() {
-                isShow = !isShow;
+                isHide = !isHide;
               });
             },
             icon: Icon(
-              isShow ? Icons.visibility_off : Icons.visibility,
+              !isHide ? Icons.visibility_off : Icons.visibility,
             ),
           ),
           prefixIcon: Padding(

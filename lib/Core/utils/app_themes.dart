@@ -1,6 +1,5 @@
 import 'package:fire_chat/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppThemes {
   static ThemeData lightTheme() {
@@ -9,11 +8,15 @@ class AppThemes {
       cardColor: Colors.white,
       useMaterial3: true,
       brightness: Brightness.light,
-      colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
-      textTheme: GoogleFonts.cairoTextTheme(ThemeData.light().textTheme),
+      fontFamily: 'IBMPLEX',
       appBarTheme: const AppBarTheme(
         backgroundColor: kPrimaryColor,
         foregroundColor: Colors.white,
+        titleTextStyle: TextStyle(
+          fontFamily: 'IBMPLEX',
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
       ),
       elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(
@@ -21,6 +24,7 @@ class AppThemes {
           foregroundColor: MaterialStatePropertyAll(Colors.white),
           textStyle: MaterialStatePropertyAll(
             TextStyle(
+              fontFamily: 'IBMPLEX',
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
@@ -41,13 +45,20 @@ class AppThemes {
   }
 
   static ThemeData darkTheme() {
-    return ThemeData.dark().copyWith(
+    return ThemeData(
       primaryColor: Colors.white,
       useMaterial3: true,
       cardColor: kPrimaryColor,
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-      textTheme: GoogleFonts.cairoTextTheme(ThemeData.dark().textTheme),
+      brightness: Brightness.dark,
+      fontFamily: 'IBMPLEX',
+      colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.white, brightness: Brightness.dark),
       appBarTheme: const AppBarTheme(
+        titleTextStyle: TextStyle(
+          fontFamily: 'IBMPLEX',
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
         backgroundColor: kPrimaryColor,
       ),
       elevatedButtonTheme: const ElevatedButtonThemeData(
@@ -57,6 +68,7 @@ class AppThemes {
           textStyle: MaterialStatePropertyAll(
             TextStyle(
               fontSize: 16,
+              fontFamily: 'IBMPLEX',
               fontWeight: FontWeight.bold,
             ),
           ),
