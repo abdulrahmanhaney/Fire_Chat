@@ -2,8 +2,6 @@ import 'package:fire_chat/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../styles/text_styles.dart';
-
 class AppThemes {
   static ThemeData lightTheme() {
     return ThemeData(
@@ -13,18 +11,27 @@ class AppThemes {
       brightness: Brightness.light,
       colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
       textTheme: GoogleFonts.cairoTextTheme(ThemeData.light().textTheme),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: kPrimaryColor,
+        foregroundColor: Colors.white,
+      ),
       elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(
           backgroundColor: MaterialStatePropertyAll(kPrimaryColor),
           foregroundColor: MaterialStatePropertyAll(Colors.white),
-          textStyle: MaterialStatePropertyAll(AppTextStyles.s16b),
+          textStyle: MaterialStatePropertyAll(
+            TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           minimumSize: MaterialStatePropertyAll(
             Size(double.infinity, 45),
           ),
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
-                Radius.circular(15),
+                Radius.circular(10),
               ),
             ),
           ),
@@ -40,11 +47,19 @@ class AppThemes {
       cardColor: kPrimaryColor,
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
       textTheme: GoogleFonts.cairoTextTheme(ThemeData.dark().textTheme),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: kPrimaryColor,
+      ),
       elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(
           backgroundColor: MaterialStatePropertyAll(Colors.white),
           foregroundColor: MaterialStatePropertyAll(kPrimaryColor),
-          textStyle: MaterialStatePropertyAll(AppTextStyles.s16b),
+          textStyle: MaterialStatePropertyAll(
+            TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           minimumSize: MaterialStatePropertyAll(
             Size(double.infinity, 45),
           ),

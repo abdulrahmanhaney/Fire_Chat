@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../Core/styles/text_styles.dart';
+import 'custom_password_text_field.dart';
 import 'custom_text_field.dart';
 
 class LoginSection extends StatefulWidget {
@@ -45,20 +46,22 @@ class _LoginSectionState extends State<LoginSection> {
               },
               validator: (p0) {
                 if (p0?.isEmpty ?? true) {
-                  return "Email can't be empty";
+                  return "Email Can't be empty";
+                }
+                if (!p0!.contains('@')) {
+                  return "Error in email formatt";
                 }
                 return null;
               },
             ),
-            CustomTextField(
-              icon: Icons.password,
+            CustomPassWordTextField(
               hint: 'Password',
               onSaved: (p0) {
                 passWord = p0!;
               },
               validator: (p0) {
                 if (p0?.isEmpty ?? true) {
-                  return "Password can't be empty";
+                  return "Password Can't be empty";
                 }
                 return null;
               },

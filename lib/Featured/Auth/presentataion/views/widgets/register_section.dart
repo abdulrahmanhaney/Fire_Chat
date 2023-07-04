@@ -4,6 +4,8 @@ import 'package:fire_chat/Featured/Auth/presentataion/views/widgets/custom_text_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'custom_password_text_field.dart';
+
 class RegisterSection extends StatefulWidget {
   const RegisterSection({super.key});
 
@@ -62,8 +64,7 @@ class _RegisterSectionState extends State<RegisterSection> {
                 return null;
               },
             ),
-            CustomTextField(
-              icon: Icons.password,
+            CustomPassWordTextField(
               hint: 'Password',
               onSaved: (p0) {
                 password = p0!;

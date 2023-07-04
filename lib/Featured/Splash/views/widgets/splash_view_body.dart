@@ -1,7 +1,7 @@
 import 'package:fire_chat/Core/styles/text_styles.dart';
 import 'package:fire_chat/Core/utils/service_lactor.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/views/register_view.dart';
-import 'package:fire_chat/Featured/Auth/presentataion/views/reset_password_view.dart';
+import 'package:fire_chat/Featured/Home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -20,7 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   var shared = getIt.get<SharedPreferences>();
 
   @override
-  void initState()  {
+  void initState() {
     super.initState();
     initAnimation();
     navigateToAnotherScreen();
@@ -92,7 +92,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         if (shared.getString('userInfo')?.isEmpty ?? true) {
           Navigator.of(context).pushReplacementNamed(RegisterView.id);
         } else {
-          Navigator.of(context).pushReplacementNamed(ResetPasswordView.id);
+          Navigator.of(context).pushReplacementNamed(HomeView.id);
         }
       },
     );

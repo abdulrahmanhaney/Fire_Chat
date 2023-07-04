@@ -8,3 +8,12 @@ abstract class ResetPasswordState extends Equatable {
 }
 
 class ResetPasswordInitial extends ResetPasswordState {}
+
+class ResetPasswordLoading extends ResetPasswordState {}
+
+class ResetPasswordSuccess extends ResetPasswordState {}
+
+class ResetPasswordFailuer extends ResetPasswordState {
+  final String errorMessage;
+  const ResetPasswordFailuer(this.errorMessage);
+}

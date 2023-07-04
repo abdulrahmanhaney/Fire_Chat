@@ -4,9 +4,11 @@ import 'package:fire_chat/Core/utils/service_lactor.dart';
 import 'package:fire_chat/Featured/Auth/data/repositories/auth_repo_impl.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/manager/create_user_cubit/create_user_cubit.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/manager/login_user_cubit/login_user_cubit.dart';
+import 'package:fire_chat/Featured/Auth/presentataion/manager/reset_password_cubit/reset_password_cubit.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/views/login_view.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/views/register_view.dart';
 import 'package:fire_chat/Featured/Auth/presentataion/views/reset_password_view.dart';
+import 'package:fire_chat/Featured/Home/presentation/views/home_view.dart';
 import 'package:fire_chat/Featured/Splash/splash_view.dart';
 import 'package:fire_chat/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -42,6 +44,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => LoginUserCubit(authrepoimpl, shared),
         ),
+        BlocProvider(
+          create: (context) => ResetPasswordCubit(authrepoimpl),
+        ),
       ],
       child: MaterialApp(
         title: 'Fire Chat',
@@ -58,6 +63,14 @@ class MyApp extends StatelessWidget {
               return PageTransition(
                 child: const LoginView(),
                 type: PageTransitionType.fade,
+                duration: const Duration(milliseconds: 500),
+                settings: settings,
+              );
+            case HomeView.id:
+              return PageTransition(
+                child: const HomeView(),
+                type: PageTransitionType.fade,
+                alignment: Alignment.center,
                 duration: const Duration(milliseconds: 500),
                 settings: settings,
               );
