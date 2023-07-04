@@ -51,13 +51,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
             height: 10,
           ),
           SlideTransition(
-            position: slideAnimation,
-            child: const Text(
-              'Fire Chat',
-              textAlign: TextAlign.center,
-              style: AppTextStyles.s30b,
-            ),
-          ),
+              position: slideAnimation,
+              child: const Text(
+                'Fire Chat',
+                textAlign: TextAlign.center,
+                style: AppTextStyles.s30b,
+              )),
         ],
       ),
     );

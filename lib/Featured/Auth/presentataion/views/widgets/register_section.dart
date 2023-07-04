@@ -82,9 +82,11 @@ class _RegisterSectionState extends State<RegisterSection> {
                   BlocProvider.of<CreateUserCubit>(context).createUser(
                       userName: username, email: email, passWord: password);
                 } else {
-                  setState(() {
-                    autovalidateMode = AutovalidateMode.always;
-                  });
+                  setState(
+                    () {
+                      autovalidateMode = AutovalidateMode.always;
+                    },
+                  );
                 }
               },
               child: const Text('Register'),
