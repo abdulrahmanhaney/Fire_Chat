@@ -11,6 +11,8 @@ class LoginUserInitial extends LoginUserState {}
 
 class LoginUserLoading extends LoginUserState {}
 
+class StoreUserSuccess extends LoginUserState {}
+
 class LoginUserSuccess extends LoginUserState {
   final UserCredential user;
   const LoginUserSuccess(this.user);

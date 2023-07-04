@@ -20,7 +20,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  setupGetIt();
+  await setupGetIt();
   runApp(
     const MyApp(),
   );
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           create: (context) => CreateUserCubit(authrepoimpl, users),
         ),
         BlocProvider(
-          create: (context) => LoginUserCubit(authrepoimpl),
+          create: (context) => LoginUserCubit(authrepoimpl, shared),
         ),
       ],
       child: MaterialApp(

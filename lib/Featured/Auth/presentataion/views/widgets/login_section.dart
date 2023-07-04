@@ -43,12 +43,24 @@ class _LoginSectionState extends State<LoginSection> {
               onSaved: (p0) {
                 email = p0!;
               },
+              validator: (p0) {
+                if (p0?.isEmpty ?? true) {
+                  return "Email can't be empty";
+                }
+                return null;
+              },
             ),
             CustomTextField(
               icon: Icons.password,
               hint: 'Password',
               onSaved: (p0) {
                 passWord = p0!;
+              },
+              validator: (p0) {
+                if (p0?.isEmpty ?? true) {
+                  return "Password can't be empty";
+                }
+                return null;
               },
             ),
             GestureDetector(

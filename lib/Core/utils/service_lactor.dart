@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 final getIt = GetIt.instance;
 
-void setupGetIt() async {
+Future<void> setupGetIt() async {
   getIt.registerSingleton<FirebaseAuthService>(
       FirebaseAuthService(FirebaseAuth.instance));
   getIt.registerLazySingleton<CollectionReference>(

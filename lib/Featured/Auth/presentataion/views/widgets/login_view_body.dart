@@ -1,4 +1,6 @@
 import 'package:fire_chat/Core/helpers/show_snak_bar.dart';
+import 'package:fire_chat/Featured/Auth/data/models/user_model.dart';
+import 'package:fire_chat/Featured/Auth/presentataion/views/reset_password_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -32,10 +34,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             });
             showSnakBar(context, text: state.erroeMessage);
           } else if (state is LoginUserSuccess) {
-            debugPrint(state.user.toString());
+            BlocProvider.of<LoginUserCubit>(context).storeUserToSharedPrefrence(
+                UserModel.fromCredintial(state.user));
+          } else if (state is StoreUserSuccess) {
             setState(() {
               inAsyncCall = false;
             });
+            Navigator.pushReplacementNamed(context, ResetPasswordView.id);
           }
         },
         child: ModalProgressHUD(
