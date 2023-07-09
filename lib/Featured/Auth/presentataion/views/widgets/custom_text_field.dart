@@ -6,7 +6,6 @@ class CustomTextField extends StatelessWidget {
       {super.key,
       required this.icon,
       required this.hint,
-      this.onSaved,
       this.validator,
       this.onCahange});
 
@@ -23,7 +22,6 @@ class CustomTextField extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
         validator: validator,
-        onSaved: onSaved,
         obscureText: isShow,
         onChanged: onCahange,
         style: const TextStyle(fontSize: 14),
@@ -37,7 +35,6 @@ class CustomTextField extends StatelessWidget {
             child: Icon(
               icon,
               size: 24,
-              color: Theme.of(context).primaryColor,
             ),
           ),
           border: const OutlineInputBorder(

@@ -54,7 +54,11 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             setState(() {
               inAsyncCall = false;
             });
-            Navigator.pushReplacementNamed(context, HomeView.id);
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              HomeView.id,
+              (route) => false,
+            );
           }
         },
         child: ModalProgressHUD(

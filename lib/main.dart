@@ -54,12 +54,13 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Fire Chat',
-        themeMode: ThemeMode.light,
+        themeMode: ThemeMode.system,
         theme: AppThemes.lightTheme(),
         darkTheme: AppThemes.darkTheme(),
         debugShowCheckedModeBanner: false,
         routes: {
           SplashView.id: (context) => const SplashView(),
+          RegisterView.id: (context) => const RegisterView(),
         },
         onGenerateRoute: (settings) {
           switch (settings.name) {
@@ -67,34 +68,29 @@ class MyApp extends StatelessWidget {
               return PageTransition(
                 child: const LoginView(),
                 type: PageTransitionType.fade,
-                duration: const Duration(milliseconds: 500),
+                duration: const Duration(milliseconds: 300),
                 settings: settings,
               );
             case HomeView.id:
               return PageTransition(
                 child: const HomeView(),
                 type: PageTransitionType.fade,
+                childCurrent: this,
                 alignment: Alignment.center,
-                duration: const Duration(milliseconds: 500),
-                settings: settings,
-              );
-            case RegisterView.id:
-              return PageTransition(
-                child: const RegisterView(),
-                type: PageTransitionType.fade,
-                duration: const Duration(milliseconds: 500),
+                duration: const Duration(milliseconds: 300),
                 settings: settings,
               );
             case ResetPasswordView.id:
               return PageTransition(
                 child: const ResetPasswordView(),
                 type: PageTransitionType.fade,
-                duration: const Duration(milliseconds: 500),
+                childCurrent: this,
+                alignment: Alignment.center,
+                duration: const Duration(milliseconds: 300),
                 settings: settings,
               );
-            default:
-              return null;
           }
+          return null;
         },
       ),
     );

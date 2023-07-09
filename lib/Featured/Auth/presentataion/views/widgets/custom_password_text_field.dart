@@ -47,12 +47,11 @@ class _CustomPassWordTextFieldState extends State<CustomPassWordTextField> {
               !isHide ? Icons.visibility_off : Icons.visibility,
             ),
           ),
-          prefixIcon: Padding(
-            padding: const EdgeInsets.only(left: 5),
+          prefixIcon: const Padding(
+            padding: EdgeInsets.only(left: 5),
             child: Icon(
               Icons.password,
               size: 24,
-              color: Theme.of(context).primaryColor,
             ),
           ),
           border: const OutlineInputBorder(

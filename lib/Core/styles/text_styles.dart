@@ -6,32 +6,34 @@ class AppTextStyles {
   // m => Medium
   // i => Italic
   // s => Size
-  static const TextStyle s30b = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.bold,
-  );
-  static const TextStyle s20b = TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.bold,
-  );
-  static const TextStyle s16b = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-  );
-  static const TextStyle s14b = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-  );
-  static const TextStyle s12b = TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w500,
-  );
-  static const TextStyle s12n = TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.normal,
-  );
-  static const TextStyle s14n = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.normal,
-  );
+  static TextStyle get s30b => const TextStyle(
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.normal,
+      );
+  static TextStyle get s20b => const TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.normal,
+      );
+  static TextStyle get s16b => const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      );
+  static TextStyle get s14b => const TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.bold,
+      );
+  static TextStyle get s12b => const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+      );
+  static TextStyle get s12n => const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.normal,
+      );
+  static TextStyle get s14n => const TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.normal,
+      );
 }

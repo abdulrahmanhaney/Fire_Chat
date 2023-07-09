@@ -4,18 +4,18 @@ import 'package:flutter/material.dart';
 class AppThemes {
   static ThemeData lightTheme() {
     return ThemeData(
-      primaryColor: kPrimaryColor,
-      cardColor: Colors.white,
       useMaterial3: true,
       brightness: Brightness.light,
       fontFamily: 'SofiaPro',
-      appBarTheme: const AppBarTheme(
-        backgroundColor: kPrimaryColor,
-        foregroundColor: Colors.white,
-        titleTextStyle: TextStyle(
+      colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
+      appBarTheme: AppBarTheme(
+        elevation: 3,
+        backgroundColor: kPrimaryColor.withOpacity(0.4),
+        titleTextStyle: const TextStyle(
           fontFamily: 'SofiaPro',
           fontWeight: FontWeight.bold,
           fontSize: 20,
+          color: Colors.black,
         ),
       ),
       elevatedButtonTheme: const ElevatedButtonThemeData(
@@ -28,9 +28,6 @@ class AppThemes {
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
-          ),
-          minimumSize: MaterialStatePropertyAll(
-            Size(double.infinity, 45),
           ),
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(
@@ -46,20 +43,22 @@ class AppThemes {
 
   static ThemeData darkTheme() {
     return ThemeData(
-      primaryColor: Colors.white,
       useMaterial3: true,
-      cardColor: kPrimaryColor,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: kPrimaryColor,
+        brightness: Brightness.dark,
+      ),
       brightness: Brightness.dark,
       fontFamily: 'SofiaPro',
-      colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.white, brightness: Brightness.dark),
-      appBarTheme: const AppBarTheme(
-        titleTextStyle: TextStyle(
+      appBarTheme: AppBarTheme(
+        elevation: 3,
+        backgroundColor: kPrimaryColor.withOpacity(0.4),
+        titleTextStyle: const TextStyle(
           fontFamily: 'SofiaPro',
           fontWeight: FontWeight.bold,
           fontSize: 20,
+          color: Colors.white,
         ),
-        backgroundColor: kPrimaryColor,
       ),
       elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(

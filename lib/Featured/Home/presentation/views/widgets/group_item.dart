@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../Core/styles/text_styles.dart';
 
-
 class GroupItem extends StatelessWidget {
   const GroupItem({
     super.key,
@@ -14,7 +13,7 @@ class GroupItem extends StatelessWidget {
       margin: const EdgeInsets.only(top: 10, left: 15, right: 15),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor.withOpacity(0.5),
+        color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
         borderRadius: BorderRadius.circular(15),
       ),
       height: 70,
@@ -25,7 +24,7 @@ class GroupItem extends StatelessWidget {
             width: 50,
             padding: const EdgeInsets.all(2),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(10),
             ),
             child: ClipRRect(
@@ -42,7 +41,7 @@ class GroupItem extends StatelessWidget {
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width / 2,
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

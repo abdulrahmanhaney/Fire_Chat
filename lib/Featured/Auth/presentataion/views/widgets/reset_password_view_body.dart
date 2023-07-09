@@ -62,7 +62,7 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const Text(
+                    Text(
                       'Reset Your Password',
                       textAlign: TextAlign.center,
                       style: AppTextStyles.s20b,
@@ -73,8 +73,8 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                     CustomTextField(
                       icon: Icons.email,
                       hint: 'Email',
-                      onSaved: (p0) {
-                        email = p0!;
+                      onCahange: (p0) {
+                        email = p0;
                       },
                       validator: (p0) {
                         if (p0?.isEmpty ?? true) {

@@ -30,7 +30,7 @@ class _LoginSectionState extends State<LoginSection> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
+            Text(
               'Login Now',
               style: AppTextStyles.s20b,
               textAlign: TextAlign.center,
@@ -68,13 +68,9 @@ class _LoginSectionState extends State<LoginSection> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  ResetPasswordView.id,
-                  (Route<dynamic> route) => false,
-                );
+                Navigator.pushNamed(context, ResetPasswordView.id);
               },
-              child: const Text(
+              child: Text(
                 'Forget Your Password ?',
                 style: AppTextStyles.s14b,
                 textAlign: TextAlign.end,
@@ -95,7 +91,7 @@ class _LoginSectionState extends State<LoginSection> {
                 }
               },
               child: const Text('Login'),
-            )
+            ),
           ],
         ),
       ),

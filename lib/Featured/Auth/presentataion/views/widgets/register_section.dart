@@ -27,9 +27,11 @@ class _RegisterSectionState extends State<RegisterSection> {
         autovalidateMode: autovalidateMode,
         key: key,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
+            Text(
               'Register Now',
+              textAlign: TextAlign.center,
               style: AppTextStyles.s20b,
             ),
             const SizedBox(
