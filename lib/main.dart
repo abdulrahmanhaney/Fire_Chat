@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Fire Chat',
-        themeMode: ThemeMode.system,
+        themeMode: ThemeMode.light,
         theme: AppThemes.lightTheme(),
         darkTheme: AppThemes.darkTheme(),
         debugShowCheckedModeBanner: false,

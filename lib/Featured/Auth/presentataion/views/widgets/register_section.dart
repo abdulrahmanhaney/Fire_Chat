@@ -32,7 +32,7 @@ class _RegisterSectionState extends State<RegisterSection> {
             Text(
               'Register Now',
               textAlign: TextAlign.center,
-              style: AppTextStyles.s20b,
+              style: AppTextStyles.s18b,
             ),
             const SizedBox(
               height: 30,

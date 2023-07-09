@@ -32,7 +32,7 @@ class _LoginSectionState extends State<LoginSection> {
           children: [
             Text(
               'Login Now',
-              style: AppTextStyles.s20b,
+              style: AppTextStyles.s18b,
               textAlign: TextAlign.center,
             ),
             const SizedBox(

@@ -1,21 +1,21 @@
 import 'package:fire_chat/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../styles/text_styles.dart';
+
 class AppThemes {
   static ThemeData lightTheme() {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
-      fontFamily: 'SofiaPro',
+      fontFamily: 'TTCommons',
       colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
       appBarTheme: AppBarTheme(
         elevation: 3,
         backgroundColor: kPrimaryColor.withOpacity(0.4),
-        titleTextStyle: const TextStyle(
-          fontFamily: 'SofiaPro',
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
-          color: Colors.black,
+        titleTextStyle: AppTextStyles.s18b.copyWith(
+          fontFamily: 'TTCommons',
+          color: Colors.black.withOpacity(0.6),
         ),
       ),
       elevatedButtonTheme: const ElevatedButtonThemeData(
@@ -24,7 +24,7 @@ class AppThemes {
           foregroundColor: MaterialStatePropertyAll(Colors.white),
           textStyle: MaterialStatePropertyAll(
             TextStyle(
-              fontFamily: 'SofiaPro',
+              fontFamily: 'TTCommons',
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
@@ -49,15 +49,13 @@ class AppThemes {
         brightness: Brightness.dark,
       ),
       brightness: Brightness.dark,
-      fontFamily: 'SofiaPro',
+      fontFamily: 'TTCommons',
       appBarTheme: AppBarTheme(
         elevation: 3,
         backgroundColor: kPrimaryColor.withOpacity(0.4),
-        titleTextStyle: const TextStyle(
-          fontFamily: 'SofiaPro',
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
-          color: Colors.white,
+        titleTextStyle: AppTextStyles.s18b.copyWith(
+          fontFamily: 'TTCommons',
+          color: Colors.white.withOpacity(0.8),
         ),
       ),
       elevatedButtonTheme: const ElevatedButtonThemeData(
@@ -67,7 +65,7 @@ class AppThemes {
           textStyle: MaterialStatePropertyAll(
             TextStyle(
               fontSize: 16,
-              fontFamily: 'SofiaPro',
+              fontFamily: 'TTCommons',
               fontWeight: FontWeight.bold,
             ),
           ),

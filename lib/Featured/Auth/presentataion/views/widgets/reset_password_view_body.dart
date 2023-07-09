@@ -65,7 +65,7 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                     Text(
                       'Reset Your Password',
                       textAlign: TextAlign.center,
-                      style: AppTextStyles.s20b,
+                      style: AppTextStyles.s18b,
                     ),
                     const SizedBox(
                       height: 30,

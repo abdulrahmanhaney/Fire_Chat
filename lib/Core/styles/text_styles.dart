@@ -9,10 +9,9 @@ class AppTextStyles {
   static TextStyle get s30b => const TextStyle(
         fontSize: 30,
         fontWeight: FontWeight.bold,
-        fontStyle: FontStyle.normal,
       );
-  static TextStyle get s20b => const TextStyle(
-        fontSize: 20,
+  static TextStyle get s18b => const TextStyle(
+        fontSize: 18,
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.normal,
       );
