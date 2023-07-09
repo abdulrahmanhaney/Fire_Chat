@@ -1,6 +1,5 @@
 import 'package:fire_chat/Core/helpers/show_snak_bar.dart';
 import 'package:fire_chat/Core/utils/service_lactor.dart';
-import 'package:fire_chat/Featured/Auth/data/models/user_model.dart';
 import 'package:fire_chat/Featured/Home/presentation/views/home_view.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -46,8 +45,11 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             });
             showSnakBar(context, text: state.erroeMessage);
           } else if (state is LoginUserSuccess) {
-            BlocProvider.of<LoginUserCubit>(context).storeUserToSharedPrefrence(
-                UserModel.fromCredintial(state.user, tokin!));
+            BlocProvider.of<LoginUserCubit>(context)
+                .getUserinfo(state.user.user!.uid);
+          } else if (state is GetUserSuccess) {
+            BlocProvider.of<LoginUserCubit>(context)
+                .storeUserToSharedPrefrence(state.user);
           } else if (state is StoreUserSuccess) {
             setState(() {
               inAsyncCall = false;

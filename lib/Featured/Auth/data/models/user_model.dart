@@ -10,10 +10,10 @@ class UserModel extends Equatable {
   final String? pic;
   final List<dynamic>? whiteList;
   final List<dynamic>? blackList;
+  final List<dynamic>? groups;
   final bool? isBanned;
   final bool? isPicShow;
   final bool? isPioShow;
-  
 
   const UserModel({
     this.username,
@@ -27,9 +27,10 @@ class UserModel extends Equatable {
     this.isPioShow,
     this.uid,
     this.token,
+    this.groups,
   });
 
-  factory UserModel.fromCredintial(UserCredential user,String tokin) {
+  factory UserModel.fromCredintial(UserCredential user, String tokin) {
     return UserModel(
       uid: user.user!.uid,
       blackList: const [],
@@ -42,6 +43,7 @@ class UserModel extends Equatable {
       username: user.user!.displayName,
       whiteList: const [],
       token: tokin,
+      groups: const [],
     );
   }
 
@@ -54,6 +56,7 @@ class UserModel extends Equatable {
         token: json['token']?.toString(),
         whiteList: List<dynamic>.from(json['whiteList'] ?? []),
         blackList: List<dynamic>.from(json['blackList'] ?? []),
+        groups: List<dynamic>.from(json['groups'] ?? []),
         isBanned: json['isBanned']?.toString().contains("true"),
         isPicShow: json['isPicShow']?.toString().contains("true"),
         isPioShow: json['isPioShow']?.toString().contains("true"),
@@ -67,6 +70,7 @@ class UserModel extends Equatable {
         if (uid != null) 'uid': uid,
         if (token != null) 'token': token,
         if (whiteList != null) 'whiteList': whiteList,
+        if (groups != null) 'groups': groups,
         if (blackList != null) 'blackList': blackList,
         if (isBanned != null) 'isBanned': isBanned,
         if (isPicShow != null) 'isPicShow': isPicShow,
@@ -82,6 +86,7 @@ class UserModel extends Equatable {
     String? token,
     List<dynamic>? whiteList,
     List<dynamic>? blackList,
+    List<dynamic>? groups,
     bool? isBanned,
     bool? isPicShow,
     bool? isPioShow,
@@ -95,6 +100,7 @@ class UserModel extends Equatable {
       token: token ?? this.token,
       whiteList: whiteList ?? this.whiteList,
       blackList: blackList ?? this.blackList,
+      groups: groups ?? this.groups,
       isBanned: isBanned ?? this.isBanned,
       isPicShow: isPicShow ?? this.isPicShow,
       isPioShow: isPioShow ?? this.isPioShow,
@@ -112,6 +118,7 @@ class UserModel extends Equatable {
       token,
       whiteList,
       blackList,
+      groups,
       isBanned,
       isPicShow,
       isPioShow,

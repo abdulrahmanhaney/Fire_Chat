@@ -1,5 +1,4 @@
 import 'package:fire_chat/Core/styles/text_styles.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -12,7 +11,6 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
-
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(

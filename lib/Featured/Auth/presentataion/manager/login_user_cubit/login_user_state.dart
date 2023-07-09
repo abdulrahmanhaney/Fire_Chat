@@ -13,6 +13,11 @@ class LoginUserLoading extends LoginUserState {}
 
 class StoreUserSuccess extends LoginUserState {}
 
+class GetUserSuccess extends LoginUserState {
+  final UserModel user;
+  const GetUserSuccess(this.user);
+}
+
 class LoginUserSuccess extends LoginUserState {
   final UserCredential user;
   const LoginUserSuccess(this.user);

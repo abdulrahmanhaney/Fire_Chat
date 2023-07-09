@@ -36,6 +36,7 @@ class CreateUserCubit extends Cubit<CreateUserState> {
       "pic": null,
       "blackList": [],
       "whiteList": [],
+      "groups": [],
       "isPicShow": true,
       "isPioShow": true,
       "pio": "Fire Chat User",

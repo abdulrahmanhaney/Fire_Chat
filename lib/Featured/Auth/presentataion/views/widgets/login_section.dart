@@ -41,23 +41,23 @@ class _LoginSectionState extends State<LoginSection> {
             CustomTextField(
               icon: Icons.email,
               hint: 'Email',
-              onSaved: (p0) {
-                email = p0!;
+              onCahange: (p0) {
+                email = p0;
               },
               validator: (p0) {
                 if (p0?.isEmpty ?? true) {
                   return "Email Can't be empty";
                 }
                 if (!p0!.contains('@')) {
-                  return "Error in email formatt";
+                  return "Error in email format";
                 }
                 return null;
               },
             ),
             CustomPassWordTextField(
               hint: 'Password',
-              onSaved: (p0) {
-                passWord = p0!;
+              onCahange: (p0) {
+                passWord = p0;
               },
               validator: (p0) {
                 if (p0?.isEmpty ?? true) {
@@ -82,7 +82,6 @@ class _LoginSectionState extends State<LoginSection> {
             ElevatedButton(
               onPressed: () {
                 if (key.currentState!.validate()) {
-                  key.currentState!.save();
                   BlocProvider.of<LoginUserCubit>(context)
                       .loginUser(email: email, passWord: passWord);
                 } else {

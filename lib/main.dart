@@ -42,7 +42,11 @@ class MyApp extends StatelessWidget {
           create: (context) => CreateUserCubit(authrepoimpl, users),
         ),
         BlocProvider(
-          create: (context) => LoginUserCubit(authrepoimpl, shared),
+          create: (context) => LoginUserCubit(
+            authrepoimpl,
+            shared,
+            FirebaseFirestore.instance,
+          ),
         ),
         BlocProvider(
           create: (context) => ResetPasswordCubit(authrepoimpl),

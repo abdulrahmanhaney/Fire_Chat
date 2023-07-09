@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:fire_chat/Featured/Auth/data/models/user_model.dart';
 import 'package:fire_chat/Featured/Auth/data/repositories/auth_repo_impl.dart';
@@ -10,11 +11,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 part 'login_user_state.dart';
 
 class LoginUserCubit extends Cubit<LoginUserState> {
-  LoginUserCubit(this.authRepoImpl, this.sharedPreferences)
+  LoginUserCubit(
+      this.authRepoImpl, this.sharedPreferences, this.firebaseFirestore)
       : super(LoginUserInitial());
 
   final AuthRepoImpl authRepoImpl;
   final SharedPreferences sharedPreferences;
+  final FirebaseFirestore firebaseFirestore;
 
   Future<void> loginUser(
       {required String email, required String passWord}) async {
@@ -31,6 +34,12 @@ class LoginUserCubit extends Cubit<LoginUserState> {
     );
   }
 
+  Future<void> getUserinfo(String uid) async {
+    var userData = await firebaseFirestore.collection('users').doc(uid).get();
+    emit(GetUserSuccess(
+        UserModel.fromJson(userData.data() as Map<String, dynamic>)));
+  }
+
   Future<void> storeUserToSharedPrefrence(UserModel user) async {
     Map<String, dynamic> userInfo = {
       "username": user.username,
@@ -39,6 +48,7 @@ class LoginUserCubit extends Cubit<LoginUserState> {
       "pic": null,
       "blackList": [],
       "whiteList": [],
+      "groups": [],
       "isPicShow": true,
       "isPioShow": true,
       "pio": "Fire Chat User",
