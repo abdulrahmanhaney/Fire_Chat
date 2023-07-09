@@ -1,5 +1,5 @@
-import 'package:fire_chat/Core/styles/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({
@@ -30,7 +30,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ],
           ),
           actions: [
-            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  FontAwesomeIcons.compass,
+                  size: 20,
+                )),
           ],
         ),
         SliverFillRemaining(
@@ -38,41 +43,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             padding: EdgeInsets.zero,
             scrollDirection: Axis.vertical,
             itemBuilder: (context, index) {
-              return Container(
-                margin: const EdgeInsets.only(top: 10, left: 15, right: 15),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                height: 70,
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Theme.of(context).primaryColor,
-                      radius: 22,
-                      child: const CircleAvatar(
-                        radius: 20,
-                        backgroundImage: NetworkImage(
-                            'https://as1.ftcdn.net/v2/jpg/04/15/47/46/1000_F_415474633_0Q1hAKF0U1Xiots9CXgzpttuIlJVHGS7.jpg'),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Abdulrahman Hany',
-                          style: AppTextStyles.s12b,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              );
+              return null;
             },
           ),
         ),

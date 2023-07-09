@@ -68,7 +68,11 @@ class _LoginSectionState extends State<LoginSection> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, ResetPasswordView.id);
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  ResetPasswordView.id,
+                  (Route<dynamic> route) => false,
+                );
               },
               child: const Text(
                 'Forget Your Password ?',

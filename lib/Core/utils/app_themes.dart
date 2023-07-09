@@ -8,12 +8,12 @@ class AppThemes {
       cardColor: Colors.white,
       useMaterial3: true,
       brightness: Brightness.light,
-      fontFamily: 'IBMPLEX',
+      fontFamily: 'SofiaPro',
       appBarTheme: const AppBarTheme(
         backgroundColor: kPrimaryColor,
         foregroundColor: Colors.white,
         titleTextStyle: TextStyle(
-          fontFamily: 'IBMPLEX',
+          fontFamily: 'SofiaPro',
           fontWeight: FontWeight.bold,
           fontSize: 20,
         ),
@@ -24,7 +24,7 @@ class AppThemes {
           foregroundColor: MaterialStatePropertyAll(Colors.white),
           textStyle: MaterialStatePropertyAll(
             TextStyle(
-              fontFamily: 'IBMPLEX',
+              fontFamily: 'SofiaPro',
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
@@ -50,12 +50,12 @@ class AppThemes {
       useMaterial3: true,
       cardColor: kPrimaryColor,
       brightness: Brightness.dark,
-      fontFamily: 'IBMPLEX',
+      fontFamily: 'SofiaPro',
       colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.white, brightness: Brightness.dark),
       appBarTheme: const AppBarTheme(
         titleTextStyle: TextStyle(
-          fontFamily: 'IBMPLEX',
+          fontFamily: 'SofiaPro',
           fontWeight: FontWeight.bold,
           fontSize: 20,
         ),
@@ -68,7 +68,7 @@ class AppThemes {
           textStyle: MaterialStatePropertyAll(
             TextStyle(
               fontSize: 16,
-              fontFamily: 'IBMPLEX',
+              fontFamily: 'SofiaPro',
               fontWeight: FontWeight.bold,
             ),
           ),
