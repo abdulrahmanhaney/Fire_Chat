@@ -40,6 +40,7 @@ class CreateUserCubit extends Cubit<CreateUserState> {
       "isPioShow": true,
       "pio": "Fire Chat User",
       "isBanned": false,
+      "token": user.token,
     };
     try {
       users.doc(user.uid).set(userInfo);

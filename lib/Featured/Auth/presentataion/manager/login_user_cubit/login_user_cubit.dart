@@ -43,6 +43,7 @@ class LoginUserCubit extends Cubit<LoginUserState> {
       "isPioShow": true,
       "pio": "Fire Chat User",
       "isBanned": false,
+      "token": user.token,
     };
 
     sharedPreferences.setString('userInfo', jsonEncode(userInfo));

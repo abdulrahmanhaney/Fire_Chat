@@ -22,6 +22,10 @@ class AppTextStyles {
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
+  static const TextStyle s12b = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
   static const TextStyle s14n = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.normal,

@@ -5,6 +5,7 @@ class UserModel extends Equatable {
   final String? username;
   final String? email;
   final String? uid;
+  final String? token;
   final String? pio;
   final String? pic;
   final List<dynamic>? whiteList;
@@ -12,6 +13,7 @@ class UserModel extends Equatable {
   final bool? isBanned;
   final bool? isPicShow;
   final bool? isPioShow;
+  
 
   const UserModel({
     this.username,
@@ -24,9 +26,10 @@ class UserModel extends Equatable {
     this.isPicShow,
     this.isPioShow,
     this.uid,
+    this.token,
   });
 
-  factory UserModel.fromCredintial(UserCredential user) {
+  factory UserModel.fromCredintial(UserCredential user,String tokin) {
     return UserModel(
       uid: user.user!.uid,
       blackList: const [],
@@ -38,6 +41,7 @@ class UserModel extends Equatable {
       pio: 'Fire Chat User',
       username: user.user!.displayName,
       whiteList: const [],
+      token: tokin,
     );
   }
 
@@ -47,6 +51,7 @@ class UserModel extends Equatable {
         pio: json['pio']?.toString(),
         pic: json['pic']?.toString(),
         uid: json['uid']?.toString(),
+        token: json['token']?.toString(),
         whiteList: List<dynamic>.from(json['whiteList'] ?? []),
         blackList: List<dynamic>.from(json['blackList'] ?? []),
         isBanned: json['isBanned']?.toString().contains("true"),
@@ -60,6 +65,7 @@ class UserModel extends Equatable {
         if (pio != null) 'pio': pio,
         if (pic != null) 'pic': pic,
         if (uid != null) 'uid': uid,
+        if (token != null) 'token': token,
         if (whiteList != null) 'whiteList': whiteList,
         if (blackList != null) 'blackList': blackList,
         if (isBanned != null) 'isBanned': isBanned,
@@ -73,6 +79,7 @@ class UserModel extends Equatable {
     String? pio,
     String? pic,
     String? uid,
+    String? token,
     List<dynamic>? whiteList,
     List<dynamic>? blackList,
     bool? isBanned,
@@ -85,6 +92,7 @@ class UserModel extends Equatable {
       pio: pio ?? this.pio,
       pic: pic ?? this.pic,
       uid: uid ?? this.uid,
+      token: token ?? this.token,
       whiteList: whiteList ?? this.whiteList,
       blackList: blackList ?? this.blackList,
       isBanned: isBanned ?? this.isBanned,
@@ -101,6 +109,7 @@ class UserModel extends Equatable {
       pio,
       pic,
       uid,
+      token,
       whiteList,
       blackList,
       isBanned,
